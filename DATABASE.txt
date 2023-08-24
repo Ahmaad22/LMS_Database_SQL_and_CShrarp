@@ -1,0 +1,208 @@
+
+-- DropTables
+Drop table AdvisorTable cascade constraints;
+Drop table ProjectTable cascade constraints;
+Drop table StudentTable cascade constraints;
+Drop table AdminTable cascade constraints;
+
+
+--  AdvisorTable
+
+CREATE TABLE AdvisorTable(
+Advisor_Id NUMBER(12) PRIMARY KEY,
+Ssn NUMBER(14) unique,
+Name1 VARCHAR2(25) ,
+Email VARCHAR2(25),
+passwordd VARCHAR2(15) NOT NULL,
+projectName VARCHAR2(15)
+);
+
+
+
+--   ProjectTable
+
+CREATE TABLE ProjectTable(
+projectID NUMBER(12) primary key,
+projectNAME VARCHAR2(25) unique,
+Description VARCHAR2(150),
+max_No_Teams NUMBER(5),
+Project_AdvisorId NUMBER(12) References AdvisorTable(Advisor_Id)
+);
+
+
+
+--  StudentTable
+
+CREATE TABLE StudentTable(
+Student_ID NUMBER(12) PRIMARY KEY,
+Ssn NUMBER(14) unique,
+Student_Name VARCHAR2(25),
+Email VARCHAR2(25),
+Student_password VARCHAR2(15) NOT NULL,
+Team_Number NUMBER(10),
+NumberOfPhases NUMBER(2),
+CONSTRAINT CheckNumberOfPhases CHECK (NumberOfPhases <= 5),
+Project_Evalution VARCHAR2(15),
+AdvisorId NUMBER(12) References AdvisorTable(Advisor_Id),
+student_projectID NUMBER(12) References ProjectTable(projectID)
+);
+
+
+
+--   AdminTable
+
+CREATE TABLE AdminTable(
+AdminID NUMBER(12) PRIMARY KEY,
+Ssn NUMBER(14) unique,
+AdminName VARCHAR2(25) ,
+Email VARCHAR2(25),
+Admin_password VARCHAR2(15) NOT NULL
+);
+
+
+
+
+--   AdminTable
+
+
+INSERT INTO AdminTable (ADMINID, SSN, ADMINNAME, EMAIL, ADMIN_PASSWORD) VALUES ('20201701237', '1', 'Ahmed Nasr', 'ahmed.nasr@gmail.com', 'Nasr123456');
+
+
+
+
+--  AdvisorTable
+
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('20201701065', '1', 'Aya MOHAMED', 'aya.mohamed@gmail.com', 'Aya123456','grad');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('2', '2', 'zika', 'zika.com', 'hr','mini');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('3', '3', 'maya', 'maya.com', 'hr','machine');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('4', '4', 'Samira', 'Samira.com', 'hr','attend');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('5', '5', 'Nesma', 'Nesma.com', 'hr','web');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('6', '6', 'Nada', 'Nada.com', 'hr','app');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('7', '7', 'Nourhan', 'Nourhan.com', 'hr','mobile');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('8', '8', 'Mira', 'Mira.com', 'hr','Ai');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('9', '9', 'hany', 'hany.com', 'hr','hardware');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('10', '10', 'kareem', 'kareem.com', 'hr','software');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('11', '11', 'mostafa', 'mostafa.com', 'hr','Hard');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('12', '12', 'hady', 'hady.com', 'hr','Easy');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('13', '13', 'younes', 'younes.com', 'hr','Mid');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('14', '14', 'mousa', 'mousa.com', 'hr','Cancel');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('15', '15', 'karam', 'karam.com', 'hr','team4');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('16', '16', 'sayed', 'sayed.com', 'hr','Loan');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('17', '17', 'Adel', 'Adel.com', 'hr','data');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('18', '18', 'Nady', 'Nady.com', 'hr','forget');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('19', '19', 'Nedal', 'Nedal.com', 'hr','netflex');
+INSERT INTO AdvisorTable(ADVISOR_ID, SSN, NAME1, EMAIL, PASSWORDD,PROJECTNAME) VALUES ('20', '20', 'Ramy', 'Ramy.com', 'hr','compare');
+
+
+
+
+
+--   ProjectTable
+
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('1', 'Grad', 'this my project','3', '20201701065');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('2', 'APp', 'this my project','4', '2');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('3', 'web', 'this my project','2', '3');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('4', 'Ai', 'this my project','5', '4');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('5', 'Attend', 'this my project','2', '5');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('6', 'flutter', 'this my project','5', '6');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('7', 'vaccine', 'this my project','6', '7');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('8', 'hardware', 'this my project','3', '8');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('9', 'software', 'this my project','2', '9');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('10', 'Servise', 'this my project','2', '10');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('11', 'Cancel', 'this my project','5', '11');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('12', 'Prediction', 'this my project','4', '12');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('13', 'Loan', 'this my project','3', '13');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('14', 'Bank', 'this my project','3', '14');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('15', 'Netflix', 'this my project','2', '15');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('16', 'Blood Bank', 'this my project','4', '16');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('17', 'mini market', 'this my project','6', '17');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('18', 'heart', 'this my project','3', '18');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('19', 'floppy bird', 'this my project','2', '19');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('20', 'ice tower', 'this my project','3', '20');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('21', 'Super mario', 'this my project','5', '20201701065');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('22', 'system', 'this my project','3', '3');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('23', 'Game', 'this my project','6', '8');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('24', 'Attendance', 'this my project','3', '7');
+INSERT INTO ProjectTable(PROJECTID, PROJECTNAME, DESCRIPTION, MAX_NO_TEAMS, PROJECT_ADVISORID)   VALUES ('25', 'HEllo world', 'this my project','3', '10');
+
+
+
+
+
+
+--  StudentTable
+
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID) 
+            VALUES ('20201700064', '1', 'Ahmed Ali', 'ahmed.ali@gmail.com', 'Ali123456','1','1','good','20201701065','1');
+
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('2', '2', 'mohamed', 'mohamed.com', 'hr','1','1','good','20201701065','20');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID) 
+            VALUES ('3', '3', 'Nasr', 'Nasr.com', 'hr','1','1','bad','12','2');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('4', '4', 'kareem', 'kareem.com', 'hr','1','1','good','4','11');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID) 
+            VALUES ('5', '5', 'ibrahim', 'ibrahim.com', 'hr','1','1','very good','14','12');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('6', '6', 'islam', 'islam.com', 'hr','2','2','very good','16','15');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('7', '7', 'ismail', 'ismail.com', 'hr','2','2','good','16','13');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('8', '8', 'hany', 'hany.com', 'hr','2','2','bad','13','12');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('9', '9', 'youssef', 'youssef.com', 'hr','2','2','good','13','13');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('10', '10', 'younes', 'younes.com', 'hr','2','2','very good','13','17');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('11', '11', 'karam', 'karam.com', 'hr','3','3','good','12','15');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('12', '12', 'kamal', 'kamal.com', 'hr','3','3','good','13','17');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('13', '13', 'karem', 'karem.com', 'hr','3','3','bad','13','12');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('14', '14', 'hossam', 'hossam.com', 'hr','3','3','good','20201701065','13');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('15', '15', 'ramy', 'ramy.com', 'hr','3','3','very good','5','3');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('16', '16', 'wael', 'wael.com', 'hr','4','4','good','7','3');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('17', '17', 'ramdan', 'ramdan.com', 'hr','4','4','very good','12','19');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('18', '18', 'shaaban', 'shaaban.com', 'hr','4','4','bad','10','20');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('19', '19', 'sayed', 'sayed.com', 'hr','4','4','good','11','12');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('20', '20', 'bassem', 'bassem.com', 'hr','4','4','good','12','16');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('21', '21', 'bassam', 'bassam.com', 'hr','5','5','very good','11','16');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('22', '23', 'tamer', 'tamer.com', 'hr','5','5','good','11','11');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('23', '55', 'mando', 'mando.com', 'hr','5','5','good','11','11');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('24', '24', 'taymor', 'taymor.com', 'hr','5','5','good','20201701065','9');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('25', '25', 'gamal', 'gamal.com', 'hr','5','5','bad','18','9');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('26', '26', 'gameel', 'gameel.com', 'hr','6','1','bad','15','13');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('27', '27', 'khaled', 'khaled.com', 'hr','6','1','very good','12','12');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('28', '28', 'ziad', 'ziad.com', 'hr','6','1','good','10','10');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('29', '29', 'ezzat', 'ezzat.com', 'hr','6','1','very good','10','10');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('30', '30', 'mahmoud', 'mahmoud.com', 'hr','6','1','good','12','10');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('31', '31', 'mohand', 'mohand.com', 'hr','7','2','very good','9','8');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('32', '33', 'waleed', 'waleed.com', 'hr','7','2','very good','16','12');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('33', '32', 'mohsen', 'mohsen.com', 'hr','7','2','good','13','16');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('34', '34', 'akram', 'akram.com', 'hr','7','2','good','13','16');
+INSERT INTO StudentTable(STUDENT_ID, SSN, STUDENT_NAME, EMAIL, STUDENT_PASSWORD,TEAM_NUMBER,NumberOfPhases,PROJECT_EVALUTION,ADVISORID,STUDENT_PROJECTID)
+            VALUES ('35', '35', 'gouda', 'gouda.com', 'hr','7','2','good','13','18');
+
+
+commit;

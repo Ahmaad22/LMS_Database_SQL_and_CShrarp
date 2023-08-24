@@ -1,0 +1,25 @@
+create or replace procedure GetAdvisorEmail(project_name in VARCHAR2 ,email out NUMBER)
+as
+begin 
+select ADVISOR_ID INTO email
+from  AdvisorTable
+where PROJECTNAME = project_name;
+end;
+
+----------------------------------------
+create or replace procedure Getproject_teamnum(project_name in VARCHAR2 ,teamnum out sys_refcursor)
+as
+begin 
+open teamnum for
+select s.TEAM_NUMBER 
+from  studenttable s , projecttable p
+where s.STUDENT_PROJECTID=p.PROJECTID AND p.PROJECTNAME=project_name ;
+end;
+-------------------------------------------------------------------
+create or replace procedure GetStudentEvaluation(StudentId in number, Evaluation out number)
+as
+begin 
+select ADVISORID INTO Evaluation
+from STUDENTTABLE
+where Student_ID=StudentId;
+end;

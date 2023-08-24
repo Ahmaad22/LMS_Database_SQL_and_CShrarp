@@ -1,0 +1,44 @@
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\bin\Debug\SoftWare Project.exe.config
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\bin\Debug\SoftWare Project.exe
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\bin\Debug\SoftWare Project.pdb
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.csproj.AssemblyReference.cache
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.LoginForm.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.Properties.Resources.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.csproj.GenerateResource.cache
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.csproj.CoreCompileInputs.cache
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.exe
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.pdb
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.AdminForm.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.CreateAdvisorAccount.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.CreateStudentAccount.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\bin\Debug\Oracle.DataAccess.dll
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.csproj.CopyComplete
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.ContactWithAdvisor.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.StudentForm.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.AdvisorForm.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.StudentEvaluationForm.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.TeamMembersForm.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.StudentsInSpacificProjectForm.resources
+D:\college\semester6\Software\Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.UpdateEvaluationForm.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\bin\Debug\SoftWare Project.exe.config
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\bin\Debug\SoftWare Project.exe
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\bin\Debug\SoftWare Project.pdb
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.csproj.AssemblyReference.cache
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.csproj.SuggestedBindingRedirects.cache
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.AdminForm.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.AdvisorForm.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.ContactWithAdvisor.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.CreateAdvisorAccount.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.CreateStudentAccount.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.LoginForm.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.Properties.Resources.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.StudentEvaluationForm.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.StudentForm.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.StudentsInSpacificProjectForm.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.TeamMembersForm.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare_Project.UpdateEvaluationForm.resources
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.csproj.GenerateResource.cache
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.csproj.CoreCompileInputs.cache
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.exe
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.pdb
+D:\.00 semster 6\Soft project\SoftWare Project\SoftWare Project\SoftWare Project\obj\Debug\SoftWare Project.csprojResolveAssemblyReference.cache

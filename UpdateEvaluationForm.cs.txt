@@ -1,0 +1,84 @@
+﻿using Oracle.DataAccess.Client;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+namespace SoftWare_Project
+{
+    public partial class UpdateEvaluationForm : Form
+    {
+        OracleDataAdapter adapter ;
+        OracleCommandBuilder builder;
+        DataSet ds ;
+
+        //string ordb = "Data source=orcl;User Id=scott; Password = tiger;";
+        //OracleConnection conn;
+
+        public UpdateEvaluationForm()
+        {
+            InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AdvisorForm advisorForm = new AdvisorForm();
+            this.Hide();
+            advisorForm.Show();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            string constr = "User Id=scott;Password=tiger;Data Source=orcl";
+            string cmdstr = @"select student_id from  studenttable where team_number =:tnumm";
+            adapter = new OracleDataAdapter(cmdstr, constr);
+            adapter.SelectCommand.Parameters.Add("tnumm", TeamNumberTextBox.Text);
+            ds = new DataSet();
+            adapter.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+            //DataTable dataTable = ds.Tables[0];
+
+            //foreach (DataRow dataRow in dataTable.Rows)
+            //{
+            //    StudentsComboBox.Items.Add(dataRow["STUDENT_ID"].ToString());
+
+            //}
+            
+
+        }
+
+        private void TeamNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        { 
+
+            builder=new OracleCommandBuilder(adapter);
+            adapter.Update(ds.Tables[0]);
+            //SqlDataAdapter dataAdapter = new SqlDataAdapter();
+
+            //string constr = "User Id=scott;Password=tiger;Data Source=orcl";
+            //string cmdstr = @"UPDATE studenttable set project_evalution =:projevalu where student_id =:studidd";
+            //OracleDataAdapter adapter = new OracleDataAdapter(cmdstr, constr);
+            //adapter.SelectCommand.Parameters.Add("studidd", StudentsComboBox.SelectedItem.ToString());
+            //adapter.SelectCommand.Parameters.Add("projevalu", SetEvaluationTextBox.Text);
+            //DataSet ds = new DataSet();
+            //adapter.Fill(ds);
+            //OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
+        }
+
+        private void StudentsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+    }
+}
